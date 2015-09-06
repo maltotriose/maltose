@@ -6,4 +6,4 @@
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/math.combinatorics "0.1.1"]]
   :profiles {:dev {:dependencies [[org.clojure/tools.namespace  "0.2.10"]]
-                   :source-paths ["dev/"]}})
+                   :source-paths ["dev/" "test/"]}})
