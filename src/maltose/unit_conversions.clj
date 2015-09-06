@@ -29,3 +29,10 @@
         (Math/sqrt (- (Math/pow 668 2)
                       (* 820 (+ 463 p)))))
      410))
+
+(defn ->gravity-units
+  "Given a specific gravity, return its corresponding gravity units."
+  [sg]
+  {:pre [(float? sg) (> sg 1.0)]}
+  (Math/floor
+    (* 1000 (- sg 1))))

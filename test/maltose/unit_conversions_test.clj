@@ -21,3 +21,13 @@
            AssertionError"
     (is (thrown? AssertionError (->specific-gravity nil)))
     (is (thrown? AssertionError (->specific-gravity "sweet lion of zion")))))
+
+(deftest ->gravity-units-functionality
+  (testing "Given a non-float value, this should throw an AssertionError"
+    (is (thrown? AssertionError (->gravity-units 1))))
+  (testing "Given a float value less than or equal to 1.0, this should throw an
+           AssertionError"
+    (is (thrown? AssertionError (->gravity-units 1.0))))
+  (testing "Given a float value of 1.050, this should return a gravity unit of
+           50.0"
+    (is (= 50.0 (->gravity-units 1.050)))))
